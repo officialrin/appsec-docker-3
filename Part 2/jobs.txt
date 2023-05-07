@@ -1,3 +1,17 @@
+PART 2: Applying Migrations
+
 1. django-migrations-job.yaml
 2. django-seed-job.yaml
 
+Two yaml files were created, one for migration, called migration.yaml, and one for seeding, called seeding.yaml using the Docker images nyuappsec/assign3:v0 and nyuappsec/assign3-db:v0.
+
+For the database migration, Django's migrate commands can be used to make a Kubernetes job in the migrations.yaml file. 
+The manage.py file can be referenced in the command portion of the file to trigger the job.
+Additionally, the secrets.yaml file can be referenced.
+The apply command can be used in kubectl to begin the migration.
+
+For the seeding, an argument must be passed containing the username, password, and SQL job file in order to seed successfully.
+After this is done, the Dockerfile and setup.sql must be edited and portions commented out in order for the records not to be duplicated.
+In the Dockerfile, the RUN and a COPY commands must be commented out.
+In the setup.sql file, the LOAD DATA INFILE commands must be commented out.
+These are then re-added into the seeding.sql file.
