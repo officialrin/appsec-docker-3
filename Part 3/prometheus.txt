@@ -9,5 +9,5 @@ Additionally, in instances of an ERROR return, the line graphs["404_counter"].in
 
 Helm and Prometheus must be installed for the 3.3 section.
 After the installation, kubectl commands can be used for setup.
-In the yaml file, proxy-service:8080 should be added after targer localhost:9090 to connect the file with the giftcard site.
-
+In the yaml file, proxy-service:8080 should be added after target localhost:9090 to connect the file with the giftcard site.
+The kubectl port-forward command can be used to deploy the server.
