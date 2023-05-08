@@ -1,6 +1,7 @@
 PART 3: Monitoring with Prometheus
 
 1. views.py
+2. prometheus.yaml
 
 To fix unsafe monitoring, the first part of the registering section containing the password counter monitoring "pword" variable was commented out.
 To expand reasonable monitoring, in the same views.py file, a 404 error counter was added in the prometheus section.
